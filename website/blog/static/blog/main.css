@@ -1,0 +1,24 @@
+.jumbotron{
+    padding :10px ;
+}
+.resume-content-a{
+    float: left;
+    width: auto;
+    margin-right: 10%;
+}
+.resume-content-b{
+    float: left;
+}
+
+ul li{
+    font-size:16px;
+   }
+
+i {
+    font-size: large;
+}
+
+.update{
+    padding-left: 80rem;
+}
+

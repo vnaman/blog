@@ -1,0 +1,30 @@
+{% extends 'blog/common.html' %}
+{% block head %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% endblock head%}
+
+
+
+{% block content %}
+<div class="container">
+    <h2 class="text-primary"> List of all blogs</h2> 
+    <a class="" href ="{% url 'blog-create' %}">Create new?</a>
+</div>
+    {% for post in posts %}
+<div class="container">
+    <div class="col-md-12">
+        <h1><a href="{% url 'blog-detail' post.id %}">{{ post.title }} </a></h1>
+        <span>
+            <span class="badge">{{ post.date|date:"F d, Y" }}</span>  
+            <span class="badge">{{ post.author }}</span>  
+        </span>
+        {% if post.author.id == request.user.id  %}
+            <a class="update" href="{% url 'blog-update' post.id %}">want to update?</a>
+        {% endif %}    
+        <hr>
+    </div>
+</div>
+    {% endfor %}
+{% endblock content %}

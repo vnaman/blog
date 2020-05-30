@@ -1,0 +1,9 @@
+{% extends 'blog/common.html' %}
+{% block content %}
+    <div class="container jumbotron">
+        <p> You have been logged out</p>
+        <a class="text-primart" href = "{% url 'blog-login' %}">Login again? </p>
+    </div>
+
+{% endblock %}
+
